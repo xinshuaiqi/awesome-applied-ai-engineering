@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Applied AI Engineering</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        colors: {
+          navy: '#0F172A',
+          violet: { DEFAULT: '#7C3AED', light: '#8B5CF6', dark: '#6D28D9' },
+          cyan: { DEFAULT: '#06B6D4', light: '#22D3EE', dark: '#0891B2' },
+          emerald: { DEFAULT: '#10B981', light: '#34D399', dark: '#059669' },
+          amber: { DEFAULT: '#F59E0B', dark: '#D97706' },
+          rose: { DEFAULT: '#F43F5E', dark: '#E11D48' },
+          slate: { 850: '#1E293B', 900: '#0F172A' }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background: #0F172A; }
+  .glow-violet { box-shadow: 0 0 24px rgba(124,58,237,0.25); }
+  .glow-cyan { box-shadow: 0 0 24px rgba(6,182,212,0.2); }
+  .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .card-hover:hover { transform: translateY(-3px); }
+  .gradient-text {
+    background: linear-gradient(135deg, #7C3AED, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+</style>
+</head>
+<body class="text-gray-100 font-sans min-h-screen">
+
+<!-- Hero Header -->
+<div class="bg-gradient-to-b from-[#1E1040] to-[#0F172A] border-b border-violet-900/40 px-8 py-10">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="flex items-start gap-4 mb-4">
+      <span class="bg-violet-600/20 text-violet-400 text-3xl w-14 h-14 rounded-xl flex items-center justify-center shrink-0 glow-violet">
+        <i class="fa-solid fa-brain"></i>
+      </span>
+      <div>
+        <div class="flex items-center gap-3 flex-wrap">
+          <h1 class="text-3xl font-bold gradient-text">Awesome Applied AI Engineering</h1>
+          <span class="tag bg-violet-600/30 text-violet-300 border border-violet-600/40">awesome list</span>
+          <span class="tag bg-cyan-600/30 text-cyan-300 border border-cyan-600/40">production-grade</span>
+        </div>
+        <p class="text-gray-400 text-sm mt-1.5 max-w-[680px]">
+          A curated, no-BS collection of frameworks, architectural patterns, evaluation toolkits, MCP servers, enterprise integrations, and LLMOps strategies for building production-grade AI systems.
+        </p>
+      </div>
+    </div>
+    <!-- Stats row -->
+    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-5 text-sm text-gray-500">
+      <span><i class="fa-solid fa-filter mr-1.5 text-violet-400"></i>Production-quality filter enforced</span>
+      <span><i class="fa-solid fa-ban mr-1.5 text-rose-400"></i>No abandonware · No API wrappers</span>
+      <span><i class="fa-solid fa-people-group mr-1.5 text-cyan-400"></i>Community maintained</span>
+      <span><i class="fa-brands fa-github mr-1.5 text-gray-400"></i><a href="https://github.com/xinshuaiqi/awesome-applied-ai-engineering" class="text-gray-400 hover:text-white transition">xinshuaiqi/awesome-applied-ai-engineering</a></span>
+    </div>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="max-w-[1200px] mx-auto px-8 py-8">
+
+  <!-- Stack Overview -->
+  <div class="bg-[#1E293B] border border-slate-700 rounded-2xl p-6 mb-8">
+    <h2 class="text-base font-bold text-white mb-4"><i class="fa-solid fa-layer-group text-violet-400 mr-2"></i>The Enterprise Applied AI Stack</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-xs text-center">
+      <div class="bg-violet-900/40 border border-violet-700/50 rounded-xl p-3">
+        <i class="fa-solid fa-desktop text-violet-300 text-lg mb-1.5 block"></i>
+        <div class="font-semibold text-violet-200">User Interface</div>
+        <div class="text-violet-400 mt-1">Slack · Teams · Custom Dashboards</div>
+      </div>
+      <div class="flex items-center justify-center text-slate-600 md:block md:pt-8 text-lg">
+        <i class="fa-solid fa-arrow-right md:rotate-90 md:block hidden mx-auto text-slate-600"></i>
+        <i class="fa-solid fa-arrow-down md:hidden text-slate-600"></i>
+      </div>
+      <div class="bg-cyan-900/30 border border-cyan-700/40 rounded-xl p-3">
+        <i class="fa-solid fa-robot text-cyan-300 text-lg mb-1.5 block"></i>
+        <div class="font-semibold text-cyan-200">Orchestration</div>
+        <div class="text-cyan-400 mt-1">LangGraph · AutoGen · PydanticAI</div>
+      </div>
+      <div class="bg-emerald-900/30 border border-emerald-700/40 rounded-xl p-3">
+        <i class="fa-solid fa-database text-emerald-300 text-lg mb-1.5 block"></i>
+        <div class="font-semibold text-emerald-200">Context & RAG</div>
+        <div class="text-emerald-400 mt-1">Vector DBs · MCP · GraphRAG</div>
+      </div>
+      <div class="bg-amber-900/30 border border-amber-700/40 rounded-xl p-3">
+        <i class="fa-solid fa-chart-line text-amber-300 text-lg mb-1.5 block"></i>
+        <div class="font-semibold text-amber-200">Observability</div>
+        <div class="text-amber-400 mt-1">Langfuse · Promptfoo · DeepEval</div>
+      </div>
+    </div>
+    <div class="mt-2 grid grid-cols-1 md:grid-cols-1 gap-2">
+      <div class="bg-slate-800/60 border border-slate-600/40 rounded-xl p-3 text-xs text-center">
+        <i class="fa-solid fa-server text-slate-300 text-lg mb-1.5 block"></i>
+        <div class="font-semibold text-slate-200">Inference & Infrastructure</div>
+        <div class="text-slate-400 mt-1">vLLM · Ollama · Azure OpenAI · Databricks · AWS Bedrock · Open Router</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section cards grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+
+    <!-- Foundation Concepts -->
+    <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 shadow-sm flex flex-col card-hover">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-violet-600/20 text-violet-400 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Foundation Concepts</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-solid fa-circle-dot mr-1 text-violet-500"></i>Mental models first</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-arrow-right mr-1.5 text-violet-500"></i>Transformer architecture intuition</li>
+        <li><i class="fa-solid fa-arrow-right mr-1.5 text-violet-500"></i>Chain-of-Thought &amp; ReAct patterns</li>
+        <li><i class="fa-solid fa-arrow-right mr-1.5 text-violet-500"></i>RAG: retrieval-augmented generation</li>
+        <li><i class="fa-solid fa-arrow-right mr-1.5 text-violet-500"></i>Tool use &amp; function calling</li>
+        <li><i class="fa-solid fa-arrow-right mr-1.5 text-violet-500"></i>The Bitter Lesson (Sutton)</li>
+      </ul>
+      <a href="README.md#foundation-concepts" class="inline-flex items-center gap-2 bg-violet-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-violet-600 transition w-full justify-center">
+        <i class="fa-solid fa-book"></i> Read Section
+      </a>
+    </div>
+
+    <!-- Applied AI in Practice -->
+    <div class="bg-[#1E293B] border border-cyan-800/40 rounded-xl p-5 shadow-sm flex flex-col card-hover glow-cyan">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-cyan-600/20 text-cyan-400 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-gears"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Applied AI In Practice</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-solid fa-star mr-1 text-cyan-500"></i>Core of this list</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-plug mr-1.5 text-cyan-400"></i>Enterprise integrations (SAP, Databricks, Salesforce)</li>
+        <li><i class="fa-solid fa-infinity mr-1.5 text-cyan-400"></i>Always-on agents (LangGraph, Temporal)</li>
+        <li><i class="fa-solid fa-flask-vial mr-1.5 text-cyan-400"></i>Evaluation &amp; red-teaming (Promptfoo, DeepEval)</li>
+        <li><i class="fa-solid fa-plug-circle-bolt mr-1.5 text-cyan-400"></i>MCP servers &amp; connectors</li>
+        <li><i class="fa-solid fa-diagram-project mr-1.5 text-cyan-400"></i>System integration patterns</li>
+      </ul>
+      <a href="README.md#applied-ai-in-practice" class="inline-flex items-center gap-2 bg-cyan-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-cyan-600 transition w-full justify-center">
+        <i class="fa-solid fa-arrow-right"></i> Explore Examples
+      </a>
+    </div>
+
+    <!-- MCP Ecosystem -->
+    <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 shadow-sm flex flex-col card-hover">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-emerald-600/20 text-emerald-400 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-network-wired"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Model Context Protocol</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-brands fa-anthropic mr-1 text-emerald-500"></i>Open standard by Anthropic</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-file-code mr-1.5 text-emerald-400"></i>Official MCP specification</li>
+        <li><i class="fa-solid fa-server mr-1.5 text-emerald-400"></i>Reference servers (GitHub, Postgres, Slack)</li>
+        <li><i class="fa-brands fa-python mr-1.5 text-emerald-400"></i>Python &amp; TypeScript SDKs</li>
+        <li><i class="fa-solid fa-database mr-1.5 text-emerald-400"></i>Databricks &amp; enterprise connectors</li>
+        <li><i class="fa-solid fa-shield-halved mr-1.5 text-emerald-400"></i>Security patterns for tool exposure</li>
+      </ul>
+      <a href="README.md#model-context-protocol-mcp" class="inline-flex items-center gap-2 bg-emerald-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-emerald-600 transition w-full justify-center">
+        <i class="fa-solid fa-arrow-right"></i> MCP Resources
+      </a>
+    </div>
+
+    <!-- Evaluation & Red-Teaming -->
+    <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 shadow-sm flex flex-col card-hover">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-rose-600/20 text-rose-400 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-flask-vial"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Evaluation &amp; Red-Teaming</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-solid fa-shield mr-1 text-rose-500"></i>Treat correctness as engineering</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-terminal mr-1.5 text-rose-400"></i>Promptfoo — CLI-first prompt testing</li>
+        <li><i class="fa-solid fa-vial mr-1.5 text-rose-400"></i>DeepEval — unit tests for LLMs</li>
+        <li><i class="fa-solid fa-magnifying-glass-chart mr-1.5 text-rose-400"></i>RAGAS — RAG-specific metrics</li>
+        <li><i class="fa-solid fa-eye mr-1.5 text-rose-400"></i>Langfuse — traces &amp; evals</li>
+        <li><i class="fa-solid fa-bug mr-1.5 text-rose-400"></i>Giskard — security &amp; bias testing</li>
+      </ul>
+      <a href="README.md#evaluation--red-teaming" class="inline-flex items-center gap-2 bg-rose-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-rose-600 transition w-full justify-center">
+        <i class="fa-solid fa-arrow-right"></i> Eval Frameworks
+      </a>
+    </div>
+
+    <!-- Orchestration -->
+    <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 shadow-sm flex flex-col card-hover">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-amber-600/20 text-amber-400 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-sitemap"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Orchestration &amp; Agents</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-solid fa-robot mr-1 text-amber-500"></i>Multi-agent systems</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-diagram-successor mr-1.5 text-amber-400"></i>LangGraph — stateful resumable agents</li>
+        <li><i class="fa-solid fa-people-arrows mr-1.5 text-amber-400"></i>AutoGen — multi-agent conversations</li>
+        <li><i class="fa-solid fa-code mr-1.5 text-amber-400"></i>PydanticAI — typed, testable agents</li>
+        <li><i class="fa-solid fa-clock mr-1.5 text-amber-400"></i>Temporal — durable long-running workflows</li>
+        <li><i class="fa-solid fa-users mr-1.5 text-amber-400"></i>CrewAI — role-based agent teams</li>
+      </ul>
+      <a href="README.md#orchestration--agent-frameworks" class="inline-flex items-center gap-2 bg-amber-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-amber-600 transition w-full justify-center">
+        <i class="fa-solid fa-arrow-right"></i> Agent Frameworks
+      </a>
+    </div>
+
+    <!-- Tools & Software -->
+    <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 shadow-sm flex flex-col card-hover">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="bg-slate-600/40 text-slate-300 text-xl w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-wrench"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-bold text-white">Tools &amp; Software</h2>
+          <p class="text-gray-500 text-xs"><i class="fa-solid fa-toolbox mr-1 text-slate-400"></i>Practitioner's toolkit</p>
+        </div>
+      </div>
+      <ul class="text-gray-400 text-xs mb-4 flex-1 space-y-1.5 ml-1">
+        <li><i class="fa-solid fa-microchip mr-1.5 text-slate-300"></i>Ollama &mdash; local LLM runtime</li>
+        <li><i class="fa-solid fa-route mr-1.5 text-slate-300"></i>Open Router &mdash; 200+ model gateway</li>
+        <li><i class="fa-solid fa-rocket mr-1.5 text-slate-300"></i>vLLM &mdash; production inference</li>
+        <li><i class="fa-solid fa-pen-nib mr-1.5 text-slate-300"></i>Cursor / Claude Code &mdash; AI-native IDEs</li>
+        <li><i class="fa-solid fa-shield-halved mr-1.5 text-slate-300"></i>Guardrails AI &mdash; output validation</li>
+      </ul>
+      <a href="README.md#tools--software" class="inline-flex items-center gap-2 bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-slate-600 transition w-full justify-center">
+        <i class="fa-solid fa-arrow-right"></i> All Tools
+      </a>
+    </div>
+
+  </div><!-- /grid -->
+
+  <!-- Anti-Patterns Warning Box -->
+  <div class="bg-rose-950/30 border border-rose-800/40 rounded-xl p-5 mb-8">
+    <h3 class="text-sm font-bold text-rose-300 mb-3"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Enterprise Anti-Patterns We Explicitly Call Out</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+      <div class="bg-rose-950/40 rounded-lg p-3">
+        <div class="font-semibold text-rose-200 mb-1"><i class="fa-solid fa-infinity mr-1.5"></i>Agentic Loops</div>
+        <div class="text-rose-400">Never for simple lookup tasks &mdash; causes severe latency and token burn. Use direct retrieval instead.</div>
+      </div>
+      <div class="bg-rose-950/40 rounded-lg p-3">
+        <div class="font-semibold text-rose-200 mb-1"><i class="fa-solid fa-diagram-project mr-1.5"></i>GraphRAG Everywhere</div>
+        <div class="text-rose-400">Overkill for flat QA on PDFs. Reserve for deeply interconnected domains (legal, medical, financial).</div>
+      </div>
+      <div class="bg-rose-950/40 rounded-lg p-3">
+        <div class="font-semibold text-rose-200 mb-1"><i class="fa-solid fa-microchip mr-1.5"></i>Local SLMs for Complex Reasoning</div>
+        <div class="text-rose-400">Without fallback routing, small models fail on multi-step enterprise reasoning. Always build a fallback.</div>
+      </div>
+      <div class="bg-rose-950/40 rounded-lg p-3">
+        <div class="font-semibold text-rose-200 mb-1"><i class="fa-solid fa-bolt mr-1.5"></i>Single-Model Architecture</div>
+        <div class="text-rose-400">Any production system needs routing, fallback, and cost optimization across model tiers. Lock-in is risk.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- People to Follow -->
+  <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 mb-8">
+    <h2 class="text-base font-bold text-white mb-4"><i class="fa-solid fa-star text-amber-400 mr-2"></i>People to Follow</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-violet-600/20 text-violet-400 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-user-graduate"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Andrej Karpathy</div>
+          <div class="text-xs text-gray-400 mt-0.5">Intuitive first-principles explanations of transformers, LLMs, and AI systems. Best YouTube lectures on the web.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-violet-900/50 text-violet-300">@karpathy</span>
+            <span class="tag bg-slate-700 text-slate-300">YouTube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-cyan-600/20 text-cyan-400 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-code-branch"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Harrison Chase</div>
+          <div class="text-xs text-gray-400 mt-0.5">LangChain &amp; LangGraph creator. Real agentic patterns from building production frameworks used by thousands of teams.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-cyan-900/50 text-cyan-300">@hwchase17</span>
+            <span class="tag bg-slate-700 text-slate-300">LangChain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-emerald-600/20 text-emerald-400 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-chart-bar"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Chip Huyen</div>
+          <div class="text-xs text-gray-400 mt-0.5">ML systems design, inference engineering, AI engineering career paths. Author of <em>Designing ML Systems</em>.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-emerald-900/50 text-emerald-300">@chipro</span>
+            <span class="tag bg-slate-700 text-slate-300">huyenchip.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-amber-600/20 text-amber-400 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-pen-nib"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Simon Willison</div>
+          <div class="text-xs text-gray-400 mt-0.5">LLMs, prompt engineering, AI tools journalism. Relentlessly practical. Datasette creator. Daily signal on what actually works.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-amber-900/50 text-amber-300">@simonw</span>
+            <span class="tag bg-slate-700 text-slate-300">simonwillison.net</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-rose-600/20 text-rose-400 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-flask"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Shreya Shankar</div>
+          <div class="text-xs text-gray-400 mt-0.5">ML engineering, data-centric AI, eval methodology from a practitioner lens. PhD research with real production grounding.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-rose-900/50 text-rose-300">@sh_reya</span>
+            <span class="tag bg-slate-700 text-slate-300">Evals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3">
+        <span class="bg-slate-600/40 text-slate-300 text-base w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-podcast"></i>
+        </span>
+        <div>
+          <div class="text-sm font-semibold text-white">Swyx (Shawn Wang)</div>
+          <div class="text-xs text-gray-400 mt-0.5">AI engineer community builder, Latent Space podcast, AI engineering landscape maps. Best community signal aggregator.</div>
+          <div class="flex gap-2 mt-1.5">
+            <span class="tag bg-slate-700 text-slate-300">@swyx</span>
+            <span class="tag bg-slate-700 text-slate-300">latent.space</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="README.md#people-to-follow" class="inline-flex items-center gap-2 mt-4 text-amber-400 text-xs hover:text-amber-300 transition font-medium">
+      <i class="fa-solid fa-arrow-right"></i> See full list in README
+    </a>
+  </div>
+
+  <!-- Related Awesome Lists -->
+  <div class="bg-[#1E293B] border border-slate-700 rounded-xl p-5 mb-8">
+    <h2 class="text-base font-bold text-white mb-4"><i class="fa-brands fa-github text-gray-400 mr-2"></i>Related Awesome Collections</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+      <a href="https://github.com/korchasa/awesome-mcp" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-plug mr-1.5 text-violet-400"></i>awesome-mcp</div>
+        <div class="text-gray-400">MCP servers, clients, SDKs across Python, TypeScript, Go, Rust.</div>
+      </a>
+      <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-layer-group mr-1.5 text-cyan-400"></i>awesome-llm-apps</div>
+        <div class="text-gray-400">100+ hands-on applied AI agents and RAG implementations with full code.</div>
+      </a>
+      <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-emerald-400"></i>Prompt-Engineering-Guide</div>
+        <div class="text-gray-400">Gold standard prompt technique guide including security &amp; injection defenses.</div>
+      </a>
+      <a href="https://github.com/benchflow-ai/awesome-evals" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-flask-vial mr-1.5 text-rose-400"></i>awesome-evals</div>
+        <div class="text-gray-400">Modern evaluation harness design and benchmarks for LLM pipelines.</div>
+      </a>
+      <a href="https://github.com/openai/openai-cookbook" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-book mr-1.5 text-amber-400"></i>openai-cookbook</div>
+        <div class="text-gray-400">Official production-ready code examples, structured output patterns, prompt templates.</div>
+      </a>
+      <a href="https://github.com/addyosmani/agent-skills" target="_blank" class="bg-slate-800/50 rounded-lg p-3 hover:bg-slate-700/60 transition block">
+        <div class="font-semibold text-white mb-1"><i class="fa-solid fa-people-group mr-1.5 text-slate-300"></i>agent-skills</div>
+        <div class="text-gray-400">Modular coding agent skills by Google&rsquo;s Addy Osmani: TDD, debugging, exploration.</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contributing CTA -->
+  <div class="bg-violet-950/30 border border-violet-800/40 rounded-xl p-6 text-center mt-2">
+    <p class="text-violet-200 font-semibold text-sm mb-1"><i class="fa-solid fa-code-pull-request mr-2"></i>Contributions Welcome</p>
+    <p class="text-gray-500 text-xs mb-4 max-w-[480px] mx-auto">
+      Submit a PR with your production-grade addition. Every entry must pass the three-part quality filter: production-grade, architecturally significant, and enterprise-applicable.
+    </p>
+    <div class="flex gap-3 justify-center flex-wrap">
+      <a href="CONTRIBUTING.md" class="inline-flex items-center gap-2 bg-violet-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-violet-600 transition">
+        <i class="fa-solid fa-file-lines"></i> Contribution Guidelines
+      </a>
+      <a href="https://github.com/xinshuaiqi/awesome-applied-ai-engineering/issues" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-slate-600 transition">
+        <i class="fa-brands fa-github"></i> Open an Issue
+      </a>
+    </div>
+  </div>
+
+</div><!-- /main content -->
+
+<!-- Footer -->
+<div class="border-t border-slate-800 mt-8 py-5 text-center text-xs text-gray-600">
+  <p>
+    <i class="fa-solid fa-building mr-1"></i>awesome-applied-ai-engineering
+    &middot;
+    <i class="fa-brands fa-github mr-1"></i><a href="https://github.com/xinshuaiqi" class="hover:text-gray-400 transition">xinshuaiqi</a>
+    &middot;
+    <i class="fa-solid fa-scale-balanced mr-1"></i>CC0 License
+    &middot;
+    <i class="fa-solid fa-heart text-rose-600 mr-1"></i>Community maintained
+  </p>
+</div>
+
+</body>
+</html>
