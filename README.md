@@ -150,6 +150,7 @@ Architectural blueprints for connecting AI to production infrastructure.
 | [CrewAI](https://github.com/crewAIInc/crewAI) | Role-based agent teams, rapid prototyping | ⭐⭐⭐ |
 | [OpenAI Swarm](https://github.com/openai/swarm) | Lightweight handoff patterns, minimal abstraction | ⭐⭐⭐ |
 | [Temporal](https://github.com/temporalio/temporal) | Durable long-running workflows with full replay | ⭐⭐⭐⭐⭐ |
+| [n8n](https://github.com/n8n-io/n8n) | Visual low-code workflow automation with native AI/LLM nodes; 400+ integrations, self-hostable | ⭐⭐⭐⭐ |
 
 ---
 
@@ -195,6 +196,7 @@ Architectural blueprints for connecting AI to production infrastructure.
 - **[dbt](https://github.com/dbt-labs/dbt-core)** — SQL-first data transformation with lineage, tests, and docs. Standard enterprise data layer.
 - **[Airflow](https://github.com/apache/airflow)** — Battle-tested workflow orchestration for data pipelines feeding AI systems.
 - **[Prefect](https://github.com/PrefectHQ/prefect)** — Modern dataflow orchestration with native AI task support.
+- **[n8n](https://github.com/n8n-io/n8n)** — Open-source visual workflow automation with native AI nodes (LLM chains, embeddings, vector store upsert/query). Self-hostable alternative to Zapier; connects 400+ services with JavaScript fallback when no-code isn't enough.
 
 ### Security & Governance
 - **[Guardrails AI](https://github.com/guardrails-ai/guardrails)** — Real-time output validation: PII detection, topic filters, schema enforcement.
