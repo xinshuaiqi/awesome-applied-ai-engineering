@@ -8,6 +8,27 @@ This list enforces a **"Production Quality" filter** — no abandonware, no triv
 
 ---
 
+## Repository Map
+
+Each chapter is a standalone guide. This README is the curated link index; the chapters hold the depth.
+
+| # | Chapter | What You Get |
+|---|---|---|
+| 01 | [Problem Discovery & System Design](01-problem-discovery-and-system-design/) | Evidence-based progression (prompt → retrieval → tools → agents), riskiest-assumption-first, requirements, architecture patterns |
+| 02 | [Context Engineering & RAG](02-context-engineering-and-rag/) | Long context vs RAG vs tools vs fine-tuning decision guide, hybrid retrieval, reranking, permission-aware retrieval |
+| 03 | [Workflows, Agents & Tools](03-workflows-agents-and-tools/) | Workflow and agent pattern catalog, when NOT to use agents, MCP, workflow integration |
+| 04 | [Evaluation & Testing](04-evaluation-and-testing/) | Offline-to-production eval loop, tool comparison, agent trajectory evals, CI gates |
+| 05 | [Production Architecture & LLMOps](05-production-architecture-and-llmops/) | AI gateway, reliability patterns, platform operations, observability, cost |
+| 06 | [Security, Safety & Governance](06-security-safety-and-governance/) | Content guardrails plus agent runtime security, compliance, governance checklist |
+| 07 | [Use Cases & Reference Architectures](07-use-cases-and-reference-architectures/) | Business-bottleneck-to-KPI framework, platform integrations, domain architectures |
+| 08 | [Code Examples & Starters](08-code-examples-and-starters/) | RAG API, HITL agent, MCP server, idempotent tools, eval gate, model router |
+| 09 | [Reading List & Courses](09-reading-list-and-courses/) | Books, courses, papers, newsletters, people to follow |
+| 10 | [POC to Production](10-poc-to-production/) | Stage gates, workflow integration, data readiness, adoption and value realization |
+
+**Evals are not production readiness.** Evals ask whether outputs are correct; chapter 10 asks whether the organization can run, govern, and benefit from the system.
+
+---
+
 ## Contents
 
 - [Guideline & Purpose](#guideline--purpose)
