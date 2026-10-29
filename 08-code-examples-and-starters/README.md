@@ -13,6 +13,61 @@
 
 ---
 
+## Runnable Examples (Tested)
+
+Both examples use only the Python standard library, run offline, and ship with unit tests. The "LLM" and the retriever are deliberately simple stand-ins: swap in your real model and index, and keep the surrounding control logic.
+
+### Runnable Example: Ticket-Triage Agent
+
+[`ticket-triage-agent/`](ticket-triage-agent/) shows how an agent completes a business task safely, not just how it answers.
+
+```
+propose (model) → validate (deterministic) → approval gate → saga execute → read-back verify → done
+                                     any failure → compensate finished steps → exception queue
+```
+
+| Concern | Where it shows up |
+|---|---|
+| Deterministic validation before any write | `validate()` rejects out-of-policy model output; the CRM is never touched |
+| Human approval | Refunds stop at `pending_approval` until `approve()`; rejected refunds never execute |
+| Idempotency | Keys derive from `(task_id, step)`, so a retry after a lost response does not duplicate the write |
+| Retry with backoff | `with_retry()` retries only `TransientError`; `PermanentError` fails fast |
+| Compensation | A failed later step reverses earlier steps (cancel ticket, reverse refund) |
+| Exception queue | Invalid output and failed tasks are queued with a reason, including cleanup that itself failed |
+| Resume after crash | Task state is checkpointed to disk; a restarted worker skips finished steps and does not re-ask the model |
+| Verification | The agent reads back the system of record rather than trusting the write response |
+
+```bash
+cd ticket-triage-agent
+python3 ticket_agent.py        # prints a 3-scenario demo
+python3 -m unittest -v         # 14 tests
+```
+
+Not included (add for production): a real queue and database, authentication, tracing, and a replay command for failed tasks.
+
+### Runnable Example: Permission-Aware RAG
+
+[`permission-aware-rag/`](permission-aware-rag/) shows retrieval that respects the source system's access controls.
+
+| Rule | How it is enforced |
+|---|---|
+| Filter before scoring | `search()` selects visible chunks first; unauthorized text never reaches ranking or the prompt |
+| Tenant isolation | `can_read()` requires matching tenant before any group or user grant is considered |
+| Deny by default | A chunk with an empty ACL is readable by nobody |
+| No ranking side channel | IDF statistics are computed over visible chunks only, so hidden documents cannot change scores or order |
+| ACL freshness | `resync_acl()` applies permission changes; ACLs older than `max_acl_age_s` fail closed |
+| Untrusted context | `build_prompt()` delimits retrieved text and tells the model to ignore instructions inside it |
+| Audit | Every answer returns citations and logs which documents were used, per user |
+
+```bash
+cd permission-aware-rag
+python3 -m unittest -v         # 11 tests
+```
+
+In a real system, apply the same filter as a metadata filter in your vector store (Qdrant, pgvector, OpenSearch) and sync ACLs from the source system on a schedule or by change events.
+
+---
+
 ## Pattern 1: RAG API (FastAPI + LlamaIndex + Qdrant)
 
 ```python
@@ -159,6 +214,8 @@ if __name__ == "__main__":
 ---
 
 ## Pattern 5: Idempotent Tool Call for Agent Actions
+
+Minimal sketch. For a complete tested version with retries, compensation, and resume, see the [Ticket-Triage Agent](#runnable-example-ticket-triage-agent).
 
 ```python
 import hashlib

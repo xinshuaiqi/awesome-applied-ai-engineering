@@ -49,6 +49,8 @@ The common failure is not a wrong sentence. It is a mid-process failure: a dupli
 - [ ] **Long-running state** — checkpoint and resume after crash, deploy, or approval wait
 - [ ] **End-to-end test** against a sandbox of the real systems, including failure injection
 
+Working code for this checklist: [Ticket-Triage Agent](../08-code-examples-and-starters/README.md#runnable-example-ticket-triage-agent) (14 tests).
+
 ### Lifecycle Sketch
 ```
 Trigger → context assembly → plan → validate plan
@@ -92,6 +94,10 @@ Design rules:
 - Tenant isolation enforced in the index (separate collections or mandatory tenant filter)
 - Re-sync ACLs on a schedule; treat stale ACLs as a security defect
 - Log which documents contributed to each answer for audit
+
+---
+
+Working code for these rules: [Permission-Aware RAG](../08-code-examples-and-starters/README.md#runnable-example-permission-aware-rag) (11 tests).
 
 ---
 

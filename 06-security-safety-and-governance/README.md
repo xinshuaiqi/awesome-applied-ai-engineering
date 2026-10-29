@@ -220,6 +220,38 @@ Mandatory for: external communications (email, Slack, SMS), financial transactio
 
 ---
 
+## Agent Governance Maturity
+
+Governance should scale with how much an agent is allowed to do. This is a suggested self-assessment framework, not an industry standard.
+
+### Maturity Levels
+
+| Dimension | L1 Ad hoc | L2 Managed | L3 Standardized | L4 Measured |
+|---|---|---|---|---|
+| **Inventory & ownership** | Nobody knows which agents exist | Per-project owner, spreadsheet inventory | Central registry; every agent has an owner, purpose, and risk tier | Registry drives access reviews; orphaned agents auto-flagged |
+| **Identity & permissions** | Shared API keys | Scoped keys per agent | Per-agent identity, short-lived credentials, deny-by-default allowlists | Periodic access recertification; unused permissions pruned |
+| **Tool / MCP approval** | Anyone connects anything | Manual review of new tools | Approved-tool catalog; third-party tools security-reviewed | Tool changes trigger re-review and re-evaluation |
+| **Release gates** | Ship when it looks fine | Manual test before release | Eval gate in CI; prompt/model versions pinned; canary | Production evals on live traces gate rollbacks automatically |
+| **Monitoring & audit** | Logs if someone remembered | Request logs kept | Full trace and tool-call audit trail, retention policy | Governance metrics reviewed on a schedule (incidents, overrides, drift) |
+| **Incident response** | Found out from users | Contact list exists | Runbook with tested revocation and tool-disable | Drills run; time-to-revoke measured |
+| **Human oversight** | Unspecified | Reviewer named per use case | Risk-tiered approvals with timeouts and defaults | Review burden and override rates tracked and tuned |
+
+### Match Autonomy to Governance Level
+
+| Autonomy tier | What the agent does | Minimum governance level |
+|---|---|---|
+| **0 Suggest** | Proposes; a human performs the action | L1 |
+| **1 Draft** | Prepares the change; a human sends or commits it | L2 |
+| **2 Act, reversible** | Executes reversible actions; humans review afterwards | L3 |
+| **3 Act, gated** | Executes irreversible, financial, or external actions only after approval, with tested compensation | L3, plus tested rollback |
+| **4 Act, autonomous** | Executes irreversible actions without per-action approval | L4; most organizations should not run this tier |
+
+**Rule:** an agent's autonomy tier must never exceed the governance level of the team and platform running it. To raise a tier, raise the governance level first.
+
+A runnable example of tier 3 (approval gate, idempotent writes, compensation, exception queue): [Ticket-Triage Agent](../08-code-examples-and-starters/README.md#runnable-example-ticket-triage-agent).
+
+---
+
 ## Security Testing Tools
 - **[Garak](https://github.com/leondz/garak)** — LLM vulnerability scanner. Probes for jailbreaks, prompt injection, hallucination, toxicity.
 - **[PyRIT](https://github.com/Azure/PyRIT)** — Microsoft's red-teaming toolkit. Systematic adversarial prompt generation.

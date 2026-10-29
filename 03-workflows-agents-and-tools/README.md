@@ -207,7 +207,7 @@ Trigger → plan → validate plan → read tools → draft action
    → failure: retry → compensate → exception queue → human takeover
 ```
 
-Key requirements: system-of-record writes go through deterministic validation (never raw model output), every side-effecting call carries an idempotency key, multi-step actions have compensation steps, and failed tasks land in a visible exception queue. See the full checklist in [10 · POC to Production](../10-poc-to-production/README.md#1-workflow-integration-from-answers-to-completes-the-task) and an idempotent tool-call example in [08 · Code Examples](../08-code-examples-and-starters/README.md#pattern-5-idempotent-tool-call-for-agent-actions).
+Key requirements: system-of-record writes go through deterministic validation (never raw model output), every side-effecting call carries an idempotency key, multi-step actions have compensation steps, and failed tasks land in a visible exception queue. See the full checklist in [10 · POC to Production](../10-poc-to-production/README.md#1-workflow-integration-from-answers-to-completes-the-task) and a complete tested implementation (approval gate, idempotency, compensation, exception queue, resume) in [08 · Ticket-Triage Agent](../08-code-examples-and-starters/README.md#runnable-example-ticket-triage-agent).
 
 ---
 

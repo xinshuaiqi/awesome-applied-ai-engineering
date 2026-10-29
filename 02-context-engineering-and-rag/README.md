@@ -175,7 +175,7 @@ Refresh: source ACL changes propagate to the index on a defined schedule
 - Enforce tenant isolation in the index (separate collections or a mandatory tenant filter)
 - Treat stale ACLs as a security defect; log which documents contributed to each answer
 
-Full assessment checklist: [10 · POC to Production](../10-poc-to-production/README.md#2-data-readiness--permission-aware-retrieval).
+Full assessment checklist: [10 · POC to Production](../10-poc-to-production/README.md#2-data-readiness--permission-aware-retrieval). Tested code: [Permission-Aware RAG](../08-code-examples-and-starters/README.md#runnable-example-permission-aware-rag).
 
 ---
 
