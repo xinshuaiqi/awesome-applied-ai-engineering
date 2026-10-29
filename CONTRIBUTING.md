@@ -93,6 +93,19 @@ If you discover that a listed tool has become abandonware, introduces a CVE, or 
 
 ---
 
+## Licensing of Contributions
+
+This repository is licensed under [CC BY-NC-SA 4.0](LICENSE): free to read, share, and adapt with attribution, for non-commercial purposes only, and adaptations must use the same license.
+
+By submitting a pull request you confirm that:
+- You wrote the contribution or have the right to submit it.
+- You agree it is licensed under CC BY-NC-SA 4.0, the same as the rest of the repository.
+- It contains no confidential, client-specific, or proprietary material.
+
+Please do not copy text from other sources unless their license allows it; link to the source instead.
+
+---
+
 ## Code of Conduct
 
 Be helpful, be specific, and be honest about trade-offs. The goal is a list that saves a senior engineer 3 days of research — not a list that inflates contributor counts.

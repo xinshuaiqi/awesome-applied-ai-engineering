@@ -255,12 +255,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full submission criteria and PR t
 
 ---
 
-## License
-
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, the contributors have waived all copyright to this list. See [LICENSE](LICENSE) for details.
-
----
-
 *Maintained by the community. PRs welcome. Star if this saves you a week of research.*
